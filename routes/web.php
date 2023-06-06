@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// ну вот мы и выгрузились
 
 Route::get('/', [ImagesController::class, 'index']);
 
