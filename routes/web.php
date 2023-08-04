@@ -22,6 +22,10 @@ Route::get('/', [ImagesController::class, 'index']);
 
 Route::get('/office', [ImagesController::class, 'office']);
 Route::get('/kennel', [KennelController::class, 'index']);
+Route::get('/kennel/create', [KennelController::class, 'create']);
+Route::get('/kennel/update', [KennelController::class, 'update']);
+Route::get('/kennel/delete', [KennelController::class, 'delete']);
+
 
 Route::get('/create', [ImagesController::class, 'create']);
 

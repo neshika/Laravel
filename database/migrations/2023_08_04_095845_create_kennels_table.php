@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('name');
             $table->string('owner');
-            $table->dateTime('date');
+            $table->date('date');
             $table->integer('dogs');
             $table->string('l_litter')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();
+
+            $table->softDeletes(); // для мягкого удаления в Model сделать use
         });
     }
 
