@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\KennelController;
 use Illuminate\Support\Facades\Route;
 
   
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ImagesController::class, 'index']);
 
 Route::get('/office', [ImagesController::class, 'office']);
-Route::get('/kennel', [ImagesController::class, 'kennel']);
+Route::get('/kennel', [KennelController::class, 'index']);
 
 Route::get('/create', [ImagesController::class, 'create']);
 
@@ -34,6 +35,8 @@ Route::get('/edit/{id}', [ImagesController::class, 'edit']);
 Route::post('/update/{id}',  [ImagesController::class, 'update']);
 
 Route::get('/delete/{id}',  [ImagesController::class, 'delete']);
+
+
 
 
 

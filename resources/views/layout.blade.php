@@ -36,19 +36,9 @@
                     <ul>
                         <li><a href="/"><span>всехПоказать</span></a></li>
                         <li><a href="/create"><span>создать</span></a></li>
-                        <li><a href="#"><span>щенки</span></a></li>
+                        <li><a href="/kennel"><span>Питомник</span></a></li>
                         <li><a href="#"><span>приют</span></a></li>
                         <li><a href="#"><span>создать рецепт</span></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#"><span>АГТ</span></a>
-                    <ul>
-                        <li><a href="#"><span>суки</span></a></li>
-                        <li><a href="#"><span>кобели</span></a></li>
-                        <li><a href="#"><span>щенки</span></a></li>
-                        <li><a href="#"><span>история породы</span></a></li>
-                        <li><a href="#"><span>расчет окраса</span></a></li>
                     </ul>
                 </li>
                 <li><a href="#">выйти</a></li>

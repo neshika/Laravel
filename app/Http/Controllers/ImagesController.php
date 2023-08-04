@@ -36,9 +36,7 @@ class ImagesController extends Controller
     
     }
     
-    function kennel() {
-        return view('kennel');
-    }
+
 
     function create(){
         return view('create');
