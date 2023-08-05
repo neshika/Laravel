@@ -1,7 +1,7 @@
 
 <?php $user = 'admin';?>
 
-@extends ('layout')
+@extends('layouts.layout')
 
 @section ('content')
     <div class="container-xxl">

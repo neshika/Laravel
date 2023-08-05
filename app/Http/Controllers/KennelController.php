@@ -33,8 +33,8 @@ class KennelController extends Controller
       // dd($kennels);
 
 
-
-       //return view('kennel');
+        $kennels = Kennel::all();
+       return view('kennel', compact('kennels'));
 
     }
 
