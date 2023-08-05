@@ -25,6 +25,8 @@ Route::get('/kennel', [KennelController::class, 'index']);
 Route::get('/kennel/create', [KennelController::class, 'create']);
 Route::get('/kennel/update', [KennelController::class, 'update']);
 Route::get('/kennel/delete', [KennelController::class, 'delete']);
+Route::get('/kennel/first_or_create', [KennelController::class, 'firstOrCreate']);
+Route::get('/kennel/update_or_create', [KennelController::class, 'updateOrCreate']);
 
 
 Route::get('/create', [ImagesController::class, 'create']);

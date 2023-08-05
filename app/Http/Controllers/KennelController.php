@@ -59,10 +59,19 @@ class KennelController extends Controller
                 'email' => 'mail@mail.ru'
 
 
+            ],
+            [
+                'name' => 'Пушистики',
+                'owner' => 'Закирия',
+                'date' => '2023-08-05',
+                'dogs' => '1',
+                'l_litter' => '',
+                'email' => 'pushiskti@mail.ru'
             ]
-            ];
-
-            foreach ($newKennel as $kennel){
+        ];
+        
+       
+       foreach ($newKennel as $kennel){
                 Kennel::create($kennel);
             }
 
@@ -95,4 +104,60 @@ class KennelController extends Controller
 
         dd('восстановлен - 2 ');
     }
+
+    public function firstOrCreate(){
+
+        $findKennel = [
+            'name' => 'Пушистики',
+            'owner' => 'Милана',
+            'date' => '2023-08-04',
+            'dogs' => '1',
+            'l_litter' => '',
+            'email' => 'mail@mail.ru'
+
+        ];
+        $kennel = Kennel::firstOrCreate([
+            'name' => 'Пушистики',
+        ],[
+            'name' => 'Пушистики',
+            'owner' => 'Закирия',
+            'date' => '2023-08-04',
+            'dogs' => '1',
+            'l_litter' => '',
+            'email' => 'pushiskti@mail.ru'
+        ]);
+        
+        dump($kennel);
+        
+
+        dd('firstOrCreate');
+    } 
+
+    public function updateOrCreate(){
+
+        $findKennel = [
+            'name' => 'Пушистики',
+            'owner' => 'Милана',
+            'date' => '2023-08-04',
+            'dogs' => '1',
+            'l_litter' => '',
+            'email' => 'mail@mail.ru'
+
+        ];
+        $kennel = Kennel::updateOrCreate([
+            'name' => 'Пушистики',
+        ],[
+            'name' => 'Пушистики',
+            'owner' => 'Закирия',
+            'date' => '2023-08-04',
+            'dogs' => '1',
+            'l_litter' => '',
+            'email' => 'pushiskti@mail.ru'
+        ]);
+        
+        dump($kennel);
+        
+
+        dd('updateOrCreate');
+    } 
 }
