@@ -47,7 +47,7 @@
     </nav>
 
 
-
+    
     @yield('content')
 
 
