@@ -27,6 +27,8 @@ Route::get('/kennels', [KennelController::class, 'index'])->name('kennel.index')
 Route::get('/kennels/create', [KennelController::class, 'create'])->name('kennel.create');
 Route::post('/kennels', [KennelController::class, 'store'])->name('kennel.store');
 Route::get('/kennels/{kennel}', [KennelController::class, 'show'])->name('kennel.show');
+Route::get('/kennels/{kennel}/edit', [KennelController::class, 'edit'])->name('kennel.edit');
+Route::patch('/kennels/{kennel}', [KennelController::class, 'update'])->name('kennel.update');
 
 
 

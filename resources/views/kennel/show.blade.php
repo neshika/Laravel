@@ -12,6 +12,7 @@
                   
                    <div> <strong> {{$kennel->date}}</strong> создан питомник:{{$kennel->name}}. <strong>Владельцем питомника назначен(а):</strong> {{$kennel->owner}}. В питомнике в настоящее время {{$kennel->dogs}} собак.</div>
 
+               <a href="{{ route('kennel.edit', $kennel->id)}}">редактировать</a>  <br> 
                 <a href="{{ route('kennel.index')}}">на главную</a>    
                 
 

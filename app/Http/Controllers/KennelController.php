@@ -60,33 +60,45 @@ class KennelController extends Controller
 
        
      }
+
      public function show(Kennel $kennel){
         //findOrFail
         return view ('kennel.show', compact('kennel'));
 
      }
+     public function edit(Kennel $kennel){
+        
+        return view ('kennel.edit', compact('kennel'));
 
+     }
 
+     public function update(Kennel $kennel){
+       
+        $data = request()->validate([
+            'name' => 'string',
+            'owner' => 'string',
+            'dogs' => 'integer',
+            'date' => 'date'
+        ]);
 
+        $kennel->update($data);
 
+        return redirect()->route('kennel.show', $kennel->id);
 
-
-
-
-
-
-
-
-
-    public function update(){
-        $kennel = Kennel::find(2);
-        $kennel->update([
-            'name' => 'новый питомник - 2'
-        ]
-        );
-
-        dd('update - 2 ');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function delete(){
         $kennel = Kennel::find(2);
