@@ -21,25 +21,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ImagesController::class, 'index']);
 
 Route::get('/office', [ImagesController::class, 'office'])->name('office.index');
-Route::get('/kennel', [KennelController::class, 'index'])->name('kennel.index');
-Route::get('/kennel/create', [KennelController::class, 'create'])->name('kennel.create');
+
+/** kennels */
+Route::get('/kennels', [KennelController::class, 'index'])->name('kennel.index');
+Route::get('/kennels/create', [KennelController::class, 'create'])->name('kennel.create');
+Route::post('/kennels', [KennelController::class, 'store'])->name('kennel.store');
+Route::get('/kennels/{kennel}', [KennelController::class, 'show'])->name('kennel.show');
+
+
+
 Route::get('/kennel/update', [KennelController::class, 'update']);
 Route::get('/kennel/delete', [KennelController::class, 'delete']);
 Route::get('/kennel/first_or_create', [KennelController::class, 'firstOrCreate']);
 Route::get('/kennel/update_or_create', [KennelController::class, 'updateOrCreate']);
 
 
+
+
 Route::get('/create', [ImagesController::class, 'create'])->name('image.create');
-
-
 Route::post('/store', [ImagesController::class, 'store']);
-
-Route::get('/show/{id}', [ImagesController::class, 'show']);
-
+Route::get('/show/{id}', [ImagesController::class, 'show'])->name('images.show');
 Route::get('/edit/{id}', [ImagesController::class, 'edit']);
-
 Route::post('/update/{id}',  [ImagesController::class, 'update']);
-
 Route::get('/delete/{id}',  [ImagesController::class, 'delete']);
 
 

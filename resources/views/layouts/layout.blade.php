@@ -34,7 +34,7 @@
                 <li class="dropdown">
                     <a href="/"><span>Админка</span></a>
                     <ul>
-                        <li><a href="/"><span>всехПоказать</span></a></li>
+                        <li><a href="/"><span>всехПоказатьСобак</span></a></li>
                         <li><a href="{{route('kennel.create')}}"><span>создатьПитомник</span></a></li>
                         <li><a href="{{route('kennel.index')}}"><span>Питомники</span></a></li>
                          <li><a href="{{route('image.create')}}"><span>создать картинку</span></a></li>
@@ -47,7 +47,7 @@
     </nav>
 
 
-    
+
     @yield('content')
 
 

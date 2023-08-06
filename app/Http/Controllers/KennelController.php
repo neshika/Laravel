@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kennel;
+use Carbon\Carbon;
 
 class KennelController extends Controller
 {
@@ -34,49 +35,48 @@ class KennelController extends Controller
 
 
         $kennels = Kennel::all();
-       return view('kennel', compact('kennels'));
+
+        
+       return view('kennel.index', compact('kennels'));
 
     }
 
     public function create(){
-        $newKennel = [
-            [
-                'name' => 'Хохлатки',
-                'owner' => 'Милана',
-                'date' => '2023-08-04',
-                'dogs' => '1',
-                'l_litter' => '',
-                'email' => 'mail@mail.ru'
-
-
-            ],
-            [
-                'name' => 'Новый',
-                'owner' => 'Дима',
-                'date' => '2023-08-04',
-                'dogs' => '1',
-                'l_litter' => '',
-                'email' => 'mail@mail.ru'
-
-
-            ],
-            [
-                'name' => 'Пушистики',
-                'owner' => 'Закирия',
-                'date' => '2023-08-05',
-                'dogs' => '1',
-                'l_litter' => '',
-                'email' => 'pushiskti@mail.ru'
-            ]
-        ];
-        
-       
-       foreach ($newKennel as $kennel){
-                Kennel::create($kennel);
-            }
-
-            dd('create all');
+       return view('kennel.create');
+      
     }
+
+    public function store(){
+       
+        $data = request()->validate([
+            'name' => 'string',
+            'owner' => 'string',
+            'dogs' => 'integer',
+            'date' => 'date'
+        ]);
+
+        Kennel::create($data);
+        return redirect()->route('kennel.index');
+
+       
+     }
+     public function show(Kennel $kennel){
+        //findOrFail
+        return view ('kennel.show', compact('kennel'));
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function update(){
         $kennel = Kennel::find(2);
