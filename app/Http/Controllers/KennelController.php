@@ -87,6 +87,13 @@ class KennelController extends Controller
 
     }
 
+    public function destroy(Kennel $kennel){
+        
+       $kennel->delete();
+
+        return redirect()->route('kennel.index');
+    }
+
 
 
 
