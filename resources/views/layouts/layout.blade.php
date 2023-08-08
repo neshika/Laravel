@@ -29,12 +29,18 @@
         <div id="nav">
             <ul>
                 <li><a href="/"><span>главная</span></a></li>
-                <li><a href="{{route('office.index')}}"><span>офис</span></a></li>
-
                 <li class="dropdown">
-                    <a href="/"><span>Админка</span></a>
+                    <a href="/"><span>админка</span></a>
                     <ul>
-                        <li><a href="/"><span>всехПоказатьСобак</span></a></li>
+                        <li><a href=#><span>всеПользователи</span></a></li>
+                        <li><a href=#><span>создатьПользователя</span></a></li>
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="{{route('office.index')}}"><span>офис</span></a>
+                    <ul>
+                        <li><a href="/"><span>всехПоказатьСобак(Главная)</span></a></li>
                         <li><a href="{{route('kennel.create')}}"><span>создатьПитомник</span></a></li>
                         <li><a href="{{route('kennel.index')}}"><span>Питомники</span></a></li>
                          <li><a href="{{route('image.create')}}"><span>создать картинку</span></a></li>
