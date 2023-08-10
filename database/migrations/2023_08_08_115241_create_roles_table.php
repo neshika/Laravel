@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PharIo\Manifest\AuthorElement;
 
 return new class extends Migration
 {
@@ -13,10 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rainbows', function (Blueprint $table) {
-            $table->id();
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->string('name');
-            $table->string('color');
             $table->timestamps();
 
             $table->softDeletes(); // для мягкого удаления в Model сделать use
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rainbows');
+        Schema::dropIfExists('roles');
     }
 };

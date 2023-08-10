@@ -13,13 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rainbows', function (Blueprint $table) {
-            $table->id();
+        Schema::create('users', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->string('name');
-            $table->string('color');
-            $table->timestamps();
+            $table->string('email');
+            $table->string('password');
+            $table->unsignedBigInteger('kennel_id');
+            $table->unsignedBigInteger('role_id');
+            $table->integer('visits');
+            $table->boolean('online');
 
             $table->softDeletes(); // для мягкого удаления в Model сделать use
+            $table->timestamps();
         });
     }
 
@@ -30,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rainbows');
+        Schema::dropIfExists('users');
     }
 };

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('kennels', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
-            $table->string('owner');
+            $table->unsignedBigInteger('owner_id');
             $table->date('date');
             $table->integer('dogs');
             $table->string('l_litter')->nullable();
