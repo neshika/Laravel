@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('kennels', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
-            $table->unsignedBigInteger('owner_id');
-            $table->date('date');
+          
+            $table->date('date')->default(now());
             $table->integer('dogs');
             $table->string('l_litter')->nullable();
-            $table->string('email')->nullable();
+           
             $table->timestamps();
 
             $table->softDeletes(); // для мягкого удаления в Model сделать use

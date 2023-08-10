@@ -10,4 +10,6 @@ class Role extends Model
 {
     use HasFactory;
     use SoftDeletes; //для мягкого удаления
+
+    protected $table = 'Roles';
 }

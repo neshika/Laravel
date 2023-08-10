@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Kennel;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +25,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+     //  $this->call(RoleSeeder::class);
+
+      // User::Factory()->count(5)->create();
+      Kennel::factory()->count(5)->create();
+
     }
 }
+
